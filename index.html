@@ -1,7 +1,149 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>My Personal Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <div id="app">
+    <nav class="navbar">
+      <div class="logo">Sud</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" aria-label="Toggle Dark Mode">🌙</button>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="section hero">
+        <div class="hero-content">
+          <h1>Hi, I'm <span class="gradient-text">Sud</span></h1>
+          <p class="subtitle">Building digital experiences that matter.</p>
+          <div class="cta-group">
+            <a href="#projects" class="btn primary">View Work</a>
+            <a href="#contact" class="btn secondary">Get in Touch</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="blob"></div>
+          <img src="images/hero_avatar.png" alt="Sud Profile" class="hero-image" />
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="section">
+        <h2>About Me</h2>
+        <div class="content-wrapper">
+          <p>
+            I am a passionate developer with a knack for creating elegant solutions to complex problems.
+            With a background in software engineering, I love exploring new technologies and sharing my journey.
+          </p>
+        </div>
+      </section>
+
+      <!-- Tech Stack / Badges Section -->
+      <section class="badges-section">
+        <div class="marquee-container">
+          <div class="marquee-track" id="badges-track">
+            <!-- Badges loaded dynamically from badges_data.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Section -->
+      <section id="blog" class="section">
+        <h2>Latest Thoughts</h2>
+        <div class="grid-container" id="blog-posts-container">
+          <!-- Blog posts dynamically loaded from blog_data.js -->
+          <div class="loading-spinner">Loading posts...</div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="grid-container" id="projects-list">
+          <!-- Projects dynamically loaded from projects_data.js -->
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section">
+        <h2>Get In Touch</h2>
+
+        <div class="contact-social">
+          <p>Connect with me:</p>
+          <div class="social-icons">
+            <a href="#" target="_blank" class="social-link">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="#" target="_blank" class="social-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="#" target="_blank" class="social-link">
+              <i class="fab fa-x-twitter"></i> X
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent (demo)!')">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Name" required />
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" placeholder="Email" required />
+          </div>
+          <div class="form-group">
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+          </div>
+          <div class="form-group captcha-group">
+            <label id="captcha-question" for="captcha-answer">Math Question</label>
+            <input type="number" id="captcha-answer" placeholder="Answer" required />
+          </div>
+          <button type="submit" class="btn primary">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Sud. All rights reserved.</p>
+      <p class="credits" style="font-size: 0.8rem; margin-top: 0.5rem; opacity: 0.7;">Vibe coded with Google Antigravity
+        ✨</p>
+      <div class="social-links">
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">Github</a>
+      </div>
+    </footer>
+
+    <!-- Blog Post Modal -->
+    <div id="blog-modal" class="modal">
+      <div class="modal-content glass">
+        <span class="close-modal">&times;</span>
+        <div id="modal-body" class="markdown-body">
+          <!-- Article content injected here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="./badges_data.js"></script>
+  <script src="./blog_data.js"></script>
+  <script src="./projects_data.js"></script>
+  <script src="./main.js"></script>
 </body>
+
 </html>
